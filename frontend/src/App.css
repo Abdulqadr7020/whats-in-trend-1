@@ -1,0 +1,251 @@
+/* src/App.css */
+:root {
+    --primary-color: #6c5ce7;
+    --secondary-color: #a29bfe;
+    --dark-color: #2d3436;
+    --light-color: #f5f6fa;
+    --accent-color: #fd79a8;
+    --success-color: #00b894;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  body {
+    background-color: #f9f9f9;
+    color: var(--dark-color);
+  }
+  
+  .app {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .app-header {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .app-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--dark-color);
+  }
+  
+  .highlight {
+    color: var(--primary-color);
+    font-weight: 700;
+  }
+  
+  .subtitle {
+    color: #666;
+    font-size: 1.1rem;
+  }
+  
+  .search-form {
+    margin-bottom: 2rem;
+  }
+  
+  .search-container {
+    display: flex;
+    max-width: 800px;
+    margin: 0 auto;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 50px;
+    overflow: hidden;
+  }
+  
+  .search-input {
+    flex: 1;
+    padding: 1rem 1.5rem;
+    border: none;
+    font-size: 1rem;
+    outline: none;
+  }
+  
+  .search-input::placeholder {
+    color: #aaa;
+  }
+  
+  .search-button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .search-button:hover {
+    background-color: #5649c0;
+  }
+  
+  .search-button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  .recent-searches {
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+  
+  .recent-searches p {
+    margin-bottom: 0.5rem;
+    color: #666;
+  }
+  
+  .search-tags {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  
+  .search-tag {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .search-tag:hover {
+    background-color: var(--primary-color);
+    transform: translateY(-2px);
+  }
+  
+  .error-message {
+    color: #e74c3c;
+    text-align: center;
+    margin: 1rem 0;
+    padding: 1rem;
+    background-color: #fadbd8;
+    border-radius: 5px;
+  }
+  
+  .loading-spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid var(--secondary-color);
+    border-top: 5px solid var(--primary-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 2rem auto;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  .trends-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+  
+  .trend-card {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .trend-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  }
+  
+  .trend-title {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: var(--dark-color);
+  }
+  
+  .trend-source {
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 1rem;
+  }
+  
+  .trend-description {
+    margin-bottom: 1rem;
+    line-height: 1.5;
+    color: #555;
+    flex: 1;
+  }
+  
+  .read-more {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    display: inline-block;
+    transition: color 0.2s ease;
+  }
+  
+  .read-more:hover {
+    color: var(--accent-color);
+  }
+  
+  .trend-metrics {
+    display: flex;
+    gap: 1rem;
+    font-size: 0.9rem;
+    color: #666;
+  }
+  
+  .metric {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+  }
+  
+  .app-footer {
+    margin-top: auto;
+    text-align: center;
+    padding: 2rem 0 0;
+    color: #666;
+    font-size: 0.9rem;
+  }
+  
+  @media (max-width: 768px) {
+    .app {
+      padding: 1rem;
+    }
+    
+    .search-container {
+      flex-direction: column;
+      border-radius: 10px;
+    }
+    
+    .search-input {
+      padding: 0.8rem 1rem;
+    }
+    
+    .search-button {
+      padding: 0.8rem;
+    }
+    
+    .trends-container {
+      grid-template-columns: 1fr;
+    }
+  }
